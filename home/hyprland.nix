@@ -22,6 +22,12 @@
 	"col.inactive_border" = "rgba(00000000)";
 
 	layout = "dwindle";
+    
+    exec-once = [
+        "waybar"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+      ];
+
       };
 
       bind = [
@@ -60,7 +66,7 @@
       "$mainMod, 7, workspace, 7"
       "$mainMod, 8, workspace, 8"
       "$mainMod, 9, workspace, 9"
-      "$mainMod, 10, workspace, 10"
+      "$mainMod, 0, workspace, 10"
 
       "$mainMod SHIFT, 1, movetoworkspace, 1"
       "$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -71,8 +77,17 @@
       "$mainMod SHIFT, 7, movetoworkspace, 7"
       "$mainMod SHIFT, 8, movetoworkspace, 8"
       "$mainMod SHIFT, 9, movetoworkspace, 9"
-      "$mainMod SHIFT, 10, movetoworkspace, 10"
+      "$mainMod SHIFT, 0, movetoworkspace, 10"
       ];
+    bindel = [
+      ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+      ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    ];
+
+    bindl = [
+      ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    ];
+
     };
   };
 }

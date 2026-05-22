@@ -5,7 +5,9 @@
     ./home/hyprland.nix
     ./home/kitty.nix
     ./home/zsh.nix
+    ./home/vesktop.nix
     ./home/wofi.nix    
+    ./home/waybar.nix 
     ./home/git.nix
     ./home/element-desktop.nix
   ];
@@ -20,6 +22,7 @@
     firefox
     neovim
     tmux
+    nautilus
   ];
 
   programs.home-manager.enable = true;
