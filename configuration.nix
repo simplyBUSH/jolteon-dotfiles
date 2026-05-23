@@ -2,11 +2,12 @@
 
 {
   console.keyMap = "pl2";
+  hardware.pulseaudio.enable = false; 
   nix.settings.experimental-features = ["nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "25.11";
   security.rtkit.enable = true;
-  hardware.pulseaudio.enable = false; 
+  system.stateVersion = "25.11";
+  time.timeZone = "Europe/Warsaw";
 
   environment.systemPackages = with pkgs; [
     refind 
@@ -27,22 +28,21 @@
   };
   
   environment.cinnamon.excludePackages = with pkgs; [
-    gnome-calendar
-    gnome-screenshot
-    gnome-calculator
-    gnome-system-monitor
+    celluloid                     
     eog
     evince
-
-    celluloid                     # Celluloid (Media Player)
-    pix                  # Pix (Image Management)
-    xreader              # Document Viewer / File Reader
-    xviewer              # Image Viewer
-    warpinator           # Warpinator
-    file-roller                   # File Roller (Archive Manager)
-    gucharmap                     # Character Map
-    onboard                       # Virtual Keyboard
+    file-roller                   
+    gnome-calculator
+    gnome-calendar
+    gnome-screenshot
+    gnome-system-monitor
+    gucharmap                     
+    onboard                       
+    pix                  
+    warpinator           
     xed-editor
+    xreader              
+    xviewer              
   ];
   
   services = {

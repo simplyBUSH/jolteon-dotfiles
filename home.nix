@@ -2,14 +2,15 @@
 
 {
   imports = [
+    ./home/element-desktop.nix
+    ./home/git.nix
     ./home/hyprland.nix
     ./home/kitty.nix
-    ./home/zsh.nix
     ./home/vesktop.nix
-    ./home/wofi.nix    
     ./home/waybar.nix 
-    ./home/git.nix
-    ./home/element-desktop.nix
+    ./home/wofi.nix    
+    ./home/zsh.nix
+    ./home/iamb.nix
   ];
 
   home.username = "bush";
@@ -20,9 +21,12 @@
     eza
     fastfetch
     firefox
-    neovim
-    tmux
+    mosh
     nautilus
+    neovim
+    nvtopPackages.amd
+    spotify
+    tmux
   ];
 
   programs.home-manager.enable = true;

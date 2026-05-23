@@ -44,6 +44,7 @@
       "$mainMod SHIFT, E, exec, nautilus"
       "$mainMod SHIFT, V, exec, vesktop"
       "$mainMod SHIFT, M, exec, element-desktop"
+      "$mainMod SHIFT, A, exec, pavucontrol"
 
       "$mainMod SHIFT, R, exec, hyprctl reload"
 
@@ -87,6 +88,15 @@
     bindl = [
       ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     ];
+
+    windowrule = [
+        "stayfocused 1, match:title ^()$, match:class ^(steam)$"
+        "minsize 1 1, match:title ^()$, match:class ^(steam)$"
+
+        "float 1, match:class ^(pavucontrol)$"
+        "size 400 500, match:class ^(pavucontrol)$"
+        "move 100%-410 40, match:class ^(pavucontrol)$"
+      ];
 
     };
   };
